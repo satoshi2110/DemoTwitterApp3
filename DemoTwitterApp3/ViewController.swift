@@ -41,6 +41,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tweetDetailViewController = storyboard.instantiateViewController(identifier: "TweetDetailViewController") as! TweetDetailViewController
+        let tweetData = textArrey[indexPath.row]
+        tweetDetailViewController.configure(tweet: tweetData)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(tweetDetailViewController, animated: true)
         print(indexPath.row)
     }
 
