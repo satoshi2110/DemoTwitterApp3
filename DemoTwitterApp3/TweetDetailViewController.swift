@@ -15,8 +15,17 @@ class TweetDetailViewController: UIViewController {
     var user: String = ""
     var text:String = ""
     
+    var tweetBarButtonItem: UIBarButtonItem!
+    var cancelBarButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
-         displayData()
+        super.viewDidLoad()
+        tweetBarButtonItem = UIBarButtonItem(title: "投稿する", style: .done, target: self, action: #selector(tweetBarButtonTapped(_:)))
+        cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonTapped(_:)))
+        
+        displayData()
+        self.navigationItem.rightBarButtonItems = [tweetBarButtonItem]
+        self.navigationItem.leftBarButtonItems = [cancelBarButtonItem]
     }
     
     func configure(tweet: Model) {
@@ -29,4 +38,11 @@ class TweetDetailViewController: UIViewController {
         label.text = user
         textView.text = text
     }
+    
+    @objc func tweetBarButtonTapped(_ sender: UIBarButtonItem) {
+            print("【投稿する】ボタンが押された!")
+        }
+    @objc func cancelBarButtonTapped(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+        }
 }
