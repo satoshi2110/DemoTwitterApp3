@@ -11,6 +11,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     var textArrey: [Model] = []
+    let tweetButton = UIButton()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "Cell")
         setTextArrey()
+        setupTweetButton()
+        
     }
     
     func setTextArrey() {
@@ -50,5 +54,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationController?.pushViewController(tweetDetailViewController, animated: true)
         print(indexPath.row)
     }
+    
+    func setupTweetButton() {
+        // ボタンのプロパティを設定
+        tweetButton.setTitle("+", for: .normal)
+        tweetButton.backgroundColor = .systemBlue
+        tweetButton.setTitleColor(.white, for: .normal)
+        tweetButton.layer.cornerRadius = 25
+        
+        view.addSubview(tweetButton)
+        
+        tweetButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tweetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            tweetButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            tweetButton.widthAnchor.constraint(equalToConstant: 50),
+            tweetButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        tweetButton.addTarget(self, action: #selector(tweetButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func tweetButtonTapped() {
+        print("投稿ボタンがタップされました")
+
+    }
 
 }
+

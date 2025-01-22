@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,13 +27,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLX-OA-Jkc">
+                                <rect key="frame" x="254" y="10" width="56" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="削除">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjf-8j-rHd">
+                                <rect key="frame" x="178" y="10" width="56" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="編集">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <rect key="contentStretch" x="0.0" y="0.29999999999999999" width="1" height="1"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JvD-AO-8zN" secondAttribute="trailing" constant="20" id="7c7-Yx-Jee"/>
+                            <constraint firstItem="bLX-OA-Jkc" firstAttribute="top" secondItem="wjf-8j-rHd" secondAttribute="top" id="Cpq-o2-JFC"/>
                             <constraint firstItem="JvD-AO-8zN" firstAttribute="top" secondItem="mes-os-4QR" secondAttribute="top" constant="10" id="DO4-di-deN"/>
+                            <constraint firstItem="bLX-OA-Jkc" firstAttribute="top" secondItem="mes-os-4QR" secondAttribute="top" constant="10" id="Mri-sr-PFa"/>
+                            <constraint firstItem="bLX-OA-Jkc" firstAttribute="leading" secondItem="wjf-8j-rHd" secondAttribute="trailing" constant="20" id="Y7s-uK-Qr4"/>
+                            <constraint firstItem="bLX-OA-Jkc" firstAttribute="bottom" secondItem="wjf-8j-rHd" secondAttribute="bottom" id="k4w-jA-69y"/>
                             <constraint firstAttribute="bottom" secondItem="JvD-AO-8zN" secondAttribute="bottom" constant="10" id="mAa-WZ-is7"/>
+                            <constraint firstItem="wjf-8j-rHd" firstAttribute="top" secondItem="mes-os-4QR" secondAttribute="top" constant="10" id="mJy-X4-w73"/>
+                            <constraint firstAttribute="trailing" secondItem="bLX-OA-Jkc" secondAttribute="trailing" constant="10" id="mtA-Hd-wya"/>
                             <constraint firstItem="JvD-AO-8zN" firstAttribute="leading" secondItem="mes-os-4QR" secondAttribute="leading" constant="20" id="vyB-2H-cdB"/>
                         </constraints>
                     </view>
@@ -48,6 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.98750042849307573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="tintColor"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                         <constraints>
                             <constraint firstItem="z9Y-dZ-scs" firstAttribute="leading" secondItem="5ec-t1-cOH" secondAttribute="leading" constant="30" id="8cc-2P-rSY"/>
                             <constraint firstAttribute="bottom" secondItem="z9Y-dZ-scs" secondAttribute="bottom" constant="20" id="YmE-lW-f4G"/>
@@ -70,13 +96,19 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteButton" destination="bLX-OA-Jkc" id="MYs-P5-wqi"/>
+                <outlet property="editButton" destination="wjf-8j-rHd" id="IEr-Bq-YkX"/>
                 <outlet property="label" destination="z9Y-dZ-scs" id="pMh-lz-bgU"/>
+                <outlet property="labelView" destination="5ec-t1-cOH" id="Iru-hZ-BAK"/>
                 <outlet property="user" destination="JvD-AO-8zN" id="2V1-hD-23m"/>
             </connections>
             <point key="canvasLocation" x="151.14503816793894" y="-57.394366197183103"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
