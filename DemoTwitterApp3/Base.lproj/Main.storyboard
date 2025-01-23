@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XQi-M7-NJr">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -25,31 +25,83 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CNa-AD-qdW"/>
                     <connections>
                         <outlet property="tableView" destination="RW7-my-OVp" id="xnU-o3-RHa"/>
+                        <segue destination="CND-Ur-fXl" kind="presentation" id="gWr-mW-yEb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51.145038167938928" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="875.57251908396938" y="3.5211267605633805"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="9ZP-J7-ZGT">
             <objects>
-                <viewController id="CND-Ur-fXl" customClass="TweetDetailViewController" customModule="DemoTwitterApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetDetailViewController" modalPresentationStyle="fullScreen" id="CND-Ur-fXl" customClass="TweetDetailViewController" customModule="DemoTwitterApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSq-74-VhS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7vj-OY-mL7">
+                                <rect key="frame" x="20" y="150.33333333333334" width="353" height="350.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-jJ-6tt">
+                                <rect key="frame" x="20" y="100" width="353" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MLO-6s-i5G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7vj-OY-mL7" firstAttribute="leading" secondItem="MLO-6s-i5G" secondAttribute="leading" constant="20" id="ICq-FL-kvO"/>
+                            <constraint firstItem="MLO-6s-i5G" firstAttribute="trailing" secondItem="Nbv-jJ-6tt" secondAttribute="trailing" constant="20" id="NDx-TO-Y4d"/>
+                            <constraint firstItem="MLO-6s-i5G" firstAttribute="bottom" secondItem="7vj-OY-mL7" secondAttribute="bottom" constant="351" id="QDQ-60-kP2"/>
+                            <constraint firstItem="Nbv-jJ-6tt" firstAttribute="top" secondItem="MLO-6s-i5G" secondAttribute="top" constant="100" id="UzD-F6-fTL"/>
+                            <constraint firstItem="7vj-OY-mL7" firstAttribute="top" secondItem="Nbv-jJ-6tt" secondAttribute="bottom" constant="30" id="aJO-6N-hQl"/>
+                            <constraint firstItem="MLO-6s-i5G" firstAttribute="trailing" secondItem="7vj-OY-mL7" secondAttribute="trailing" constant="20" id="mpT-uU-r3A"/>
+                            <constraint firstItem="Nbv-jJ-6tt" firstAttribute="leading" secondItem="MLO-6s-i5G" secondAttribute="leading" constant="20" id="zUF-fY-bn0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Nbv-jJ-6tt" id="PwM-D5-ua2"/>
+                        <outlet property="textView" destination="7vj-OY-mL7" id="ijx-te-fgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mho-1L-Rs5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="4"/>
+            <point key="canvasLocation" x="1765.6488549618321" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Vo-UW-L0Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQi-M7-NJr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCm-3W-xTE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f7S-vv-MeQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yT-yo-6Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51.145038167938928" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
